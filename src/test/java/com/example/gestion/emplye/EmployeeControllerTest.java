@@ -1,6 +1,5 @@
 package com.example.gestion.emplye;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -22,19 +21,10 @@ public class EmployeeControllerTest {
 	@MockBean
 	private EmployeeService employeeService;
 	
-	@Autowired
-	private EmployeeController employeeController;
-	
 	@Test
 	public void testEmployee() throws Exception {
 		
 		mockMvc.perform(get("/employees")).andExpect(status().isOk());
-	}
-	
-	@Test
-	public void testInstance() {
-		assertThat(employeeController).isNotNull();
-		assertThat(employeeController.getEmployeeService()).isNotNull();
 	}
 
 }
