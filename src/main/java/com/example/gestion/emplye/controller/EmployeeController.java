@@ -19,6 +19,13 @@ public class EmployeeController {
 
 	@Autowired
 	private EmployeeService employeeService;
+	
+	
+
+	public EmployeeService getEmployeeService() {
+		return employeeService;
+	}
+
 
 	@GetMapping("/employees")
 	public Iterable<Employe> getEmployees() {
